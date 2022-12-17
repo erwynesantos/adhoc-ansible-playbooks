@@ -1,0 +1,8 @@
+---
+- name: Install git.
+  hosts: ubuntuserver1
+  become: yes
+
+  tasks:
+  - name: Installing Git.
+    apt: update_cache=yes name=git state=latest
