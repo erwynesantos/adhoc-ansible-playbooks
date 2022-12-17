@@ -1,0 +1,9 @@
+---
+ - hosts: ubuntuservers
+   tasks:
+   - name: Cloning github public repository.
+     git:
+       repo: https://github.com/erwynesantos/adhoc-ansible-playbooks.git
+       dest: /home/ej/repos/adhoc-ansible-playbooks/
+       clone: yes
+       # update: yes
