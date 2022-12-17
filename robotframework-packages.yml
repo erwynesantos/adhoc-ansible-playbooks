@@ -1,0 +1,21 @@
+---
+- name: Install python3 and robot framework libraries.
+  hosts: ubuntuservers
+  become: true
+  
+  tasks:
+  - name: install python3
+    apt: 
+     update_cache: yes
+     name: python3
+     state: latest
+     
+  - name: Pip install robot framework libraries.
+    pip:
+     name: "{{ item }}"
+    loop: 
+     - robotframework
+     - robotframework-pabot
+     - robotframework-databaselibrary
+     - PyMySQL
+     - robotframework-seleniumlibrary
